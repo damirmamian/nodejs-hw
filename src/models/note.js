@@ -1,6 +1,5 @@
-// src/models/student.js
-
 import { model, Schema } from 'mongoose';
+import { TAGS } from '../constants/tags.js';
 
 export const noteSchema = new Schema(
   {
@@ -10,24 +9,13 @@ export const noteSchema = new Schema(
       trim: true,
     },
     content: {
-      trim: true,
       type: String,
+      trim: true,
       default: '',
     },
     tag: {
       type: String,
-      enum: [
-        'Shopping',
-        'Ideas',
-        'Travel',
-        'Finance',
-        'Health',
-        'Important',
-        'Todo',
-        'Work',
-        'Personal',
-        'Meeting',
-      ],
+      enum: TAGS,
       default: 'Todo',
     },
   },
